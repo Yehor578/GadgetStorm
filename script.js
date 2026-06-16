@@ -1,0 +1,223 @@
+const products = [
+  {
+    id: 1,
+    name: 'Безпровідна колонка',
+    price: 2990,
+    description: 'Чисте звучання для музики, ігор і розмов.',
+    category: 'gadget',
+    image: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ2Md8ToAMGiHcSylue-VGUbaNZn4_SLi4K2c9R1u3S3c9mUYFoZCwG4lMTojALJ13qBgtcG3PI_hSGodz_YN1K25o1ittBiKzghfJwF_CDn3yb7S6axN67l4FPD-kVEoZnlghbZg&usqp=CAc',
+  },
+  {
+    id: 2,
+    name: 'Навушники з шумопоглинанням',
+    price: 3999,
+    description: 'Контроль музики та звуком прямо на голові.',
+    category: 'gadget',
+    image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSdVmB8g9EZ8bDczKHLfyAfJ_lJTXBWPqZjLcBD1cpcG09Y8IqJOI8UOEf1RshT_Gyob0h3AxQHXOs53YpO4jfict26v95YRjh2wrqYclCGpEYYLtdywzxWAFK_QZW8Nl8CLqM0fg&usqp=CAc',
+  },
+  {
+    id: 3,
+    name: 'Ігрова миша',
+    price: 1799,
+    description: 'Висока точність та швидкість для геймерів.',
+    category: 'gadget',
+    image: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcST46eh0yQ6vSQ4R9g13OZAngFHqd4TkfU1vz4sLKMMOnJMvpCqQl8oUsZbMBZcNeYwWE2-1L3-cuVqJKBhvZmfBUQH3GZfhZxA5t43Z2mbbMkaDv3Pu4ng&usqp=CAc',
+  },
+  {
+    id: 4,
+    name: 'Ігрова клавіатура',
+    price: 6844,
+    description: 'Механічні клавіші з підсвічуванням для ігор.',
+    category: 'gadget',
+    image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQnS8EXDpKI1ecYOgixCRm6UXy86Z7lO0wvMh89hLc0qJoUdHXD6UJyMXziwZYdleCIyWtVRheU_AR1Bhu6GgtGwabNErpa8KO6uGRJadprXFCRooPQ3z1Lng&usqp=CAc',
+  },
+  {
+    id: 5,
+    name: 'Смарт-годинник',
+    price: 2349,
+    description: 'Контроль здоров’я та сповіщення прямо на зап’ясті.',
+    category: 'gadget',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI-FGBHVodKHBji3iBItPpwoA-0XbpO2ctRA&s',
+  },
+  {
+    id: 6,
+    name: 'Фітнес-браслет',
+    price: 739,
+    description: 'Моніторинг фізичної активності та здоров’я.',
+    category: 'gadget',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSktbzAc8DRH8_fKJSvmZUYtQc1DvQ9-eaZOg&s',
+  },
+  {
+    id: 7,
+    name: ' Портативний зарядний пристрій',
+    price: 1689,
+    description: 'Заряджайте свої пристрої будь-де.',
+    category: 'gadget',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvhaPaThh1uW3WUIiptVeH41ETTJu06xCnA&s',
+  },
+  {
+    id: 8,
+    name: 'Смартфон',
+    price: 13256,
+    description: 'Сучасний смартфон з високими характеристиками.',
+    category: 'gadget',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJjgwZje1RGPmGXtDe_tfDwsVuI6VpWMKkLw&s',
+  },
+];
+
+const giftCards = [
+  {
+    id: 101,
+    name: 'Steam Gift Card 500₴',
+    price: 500,
+    description: 'Для покупок ігор та DLC у Steam.',
+  },
+  {
+    id: 102,
+    name: 'PlayStation Store 800₴',
+    price: 800,
+    description: 'Подарунок для власників PlayStation.',
+  },
+  {
+    id: 103,
+    name: 'Xbox Gift Card 1000₴',
+    price: 1000,
+    description: 'Підходить для Xbox та Microsoft Store.',
+  },
+  {
+    id: 104,
+    name: 'Nintendo eShop 700₴',
+    price: 700,
+    description: 'Ідеальний подарунок для фанатів Nintendo.',
+  },
+];
+
+const cart = [];
+
+const productGrid = document.getElementById('productGrid');
+const giftCardGrid = document.getElementById('giftCardGrid');
+const cartCount = document.getElementById('cartCount');
+const cartItems = document.getElementById('cartItems');
+const cartTotal = document.getElementById('cartTotal');
+const checkoutButton = document.getElementById('checkoutButton');
+const themeToggle = document.getElementById('themeToggle');
+const largeTextToggle = document.getElementById('largeTextToggle');
+
+function formatPrice(value) {
+  return value.toLocaleString('uk-UA');
+}
+
+function renderCards(items, container) {
+  container.innerHTML = items
+    .map(
+      item => `
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card product-card h-100 shadow-sm">
+          ${item.image ? `<img src="${item.image}" class="card-img-top product-image" alt="${item.name}">` : ''}
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${item.name}</h5>
+            <p class="card-text text-muted mb-4">${item.description}</p>
+            <div class="mt-auto">
+              <p class="product-price text-primary mb-3">${formatPrice(item.price)} ₴</p>
+              <button class="btn btn-primary w-100" onclick="addToCart(${item.id})">Додати в кошик</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    )
+    .join('');
+}
+
+function addToCart(itemId) {
+  const product = products.find(p => p.id === itemId) || giftCards.find(c => c.id === itemId);
+  if (!product) return;
+
+  const existing = cart.find(entry => entry.id === product.id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+
+  updateCart();
+}
+
+function removeFromCart(itemId) {
+  const index = cart.findIndex(entry => entry.id === itemId);
+  if (index !== -1) {
+    cart.splice(index, 1);
+    updateCart();
+  }
+}
+
+function changeQuantity(itemId, delta) {
+  const item = cart.find(entry => entry.id === itemId);
+  if (!item) return;
+  item.quantity = Math.max(1, item.quantity + delta);
+  updateCart();
+}
+
+function updateCart() {
+  cartCount.textContent = cart.reduce((sum, entry) => sum + entry.quantity, 0);
+  cartTotal.textContent = formatPrice(cart.reduce((sum, entry) => sum + entry.quantity * entry.price, 0));
+  renderCartItems();
+}
+
+function renderCartItems() {
+  if (cart.length === 0) {
+    cartItems.innerHTML = '<p class="cart-empty">Кошик порожній. Додайте товари, щоб оформити замовлення.</p>';
+    return;
+  }
+
+  cartItems.innerHTML = cart
+    .map(
+      item => `
+        <div class="cart-item row align-items-center">
+          <div class="col-6">
+            <h6 class="mb-1">${item.name}</h6>
+            <p class="mb-1 text-muted">${item.description}</p>
+            <p class="mb-0">Ціна: ${formatPrice(item.price)} ₴</p>
+          </div>
+          <div class="col-3 text-center">
+            <div class="input-group input-group-sm">
+              <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(${item.id}, -1)">−</button>
+              <input type="text" class="form-control text-center" value="${item.quantity}" readonly>
+              <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(${item.id}, 1)">+</button>
+            </div>
+          </div>
+          <div class="col-3 text-end">
+            <p class="mb-2">Сума: ${formatPrice(item.price * item.quantity)} ₴</p>
+            <button class="btn btn-sm btn-danger" type="button" onclick="removeFromCart(${item.id})">Видалити</button>
+          </div>
+        </div>
+      `,
+    )
+    .join('');
+}
+
+checkoutButton.addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert('Ваш кошик порожній. Додайте товари перед оформленням.');
+    return;
+  }
+  cart.length = 0;
+  updateCart();
+  alert('Дякуємо за замовлення! Ваші покупки успішно оформлені.');
+  const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
+  if (cartModal) cartModal.hide();
+});
+
+renderCards(products, productGrid);
+renderCards(giftCards, giftCardGrid);
+updateCart();
+
+if (themeToggle && largeTextToggle) {
+  themeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('theme-dark', themeToggle.checked);
+  });
+
+  largeTextToggle.addEventListener('change', () => {
+    document.body.classList.toggle('large-text', largeTextToggle.checked);
+  });
+}

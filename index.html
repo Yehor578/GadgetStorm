@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GadgetStorm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">GadgetStorm</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#products">Товари</a></li>
+            <li class="nav-item"><a class="nav-link" href="#giftcards">Подарункові карти</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features">Переваги</a></li>
+          </ul>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#settingsModal">
+              Налаштування
+            </button>
+            <button class="btn btn-outline-light position-relative" id="cartButton" type="button" data-bs-toggle="modal" data-bs-target="#cartModal">
+              Кошик
+              <span class="badge bg-danger rounded-pill" id="cartCount">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-white d-flex align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 fw-bold">GadgetStorm</h1>
+        <p class="lead fs-3 mb-4">Великий магазин техніки та ігрових подарунків з крутим кошиком.</p>
+        <a href="#products" class="btn btn-light btn-lg me-2">Переглянути товари</a>
+        <a href="#giftcards" class="btn btn-outline-light btn-lg">Подарункові карти</a>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <section id="products" class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2>Гаджети</h2>
+            <p class="text-muted">Сучасні пристрої для роботи, навчання та розваг.</p>
+          </div>
+        </div>
+        <div class="row" id="productGrid"></div>
+      </section>
+
+      <section id="giftcards" class="mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2>Подарункові карти</h2>
+            <p class="text-muted">Купуйте карти для Steam, PlayStation і Xbox — чудовий подарунок для геймерів.</p>
+          </div>
+        </div>
+        <div class="row" id="giftCardGrid"></div>
+      </section>
+
+      <section id="features" class="py-5 bg-light rounded-4 shadow-sm">
+        <div class="container py-4">
+          <h2 class="mb-4 text-center">Чому обирають GadgetStorm</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card feature-card h-100 border-0 shadow-sm p-4 text-center">
+                <div class="feature-icon mb-3">⚡</div>
+                <h5>Швидка доставка</h5>
+                <p class="text-muted">Оперативно доставимо техніку та карти по всій Україні.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card feature-card h-100 border-0 shadow-sm p-4 text-center">
+                <div class="feature-icon mb-3">💳</div>
+                <h5>Безпечна оплата</h5>
+                <p class="text-muted">Підтримка карт та безготівкових оплат для зручності.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card feature-card h-100 border-0 shadow-sm p-4 text-center">
+                <div class="feature-icon mb-3">🎁</div>
+                <h5>Подарунки для геймерів</h5>
+                <p class="text-muted">Великий вибір карток для Steam, Xbox, PlayStation і Nintendo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Ваш кошик</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+          </div>
+          <div class="modal-body">
+            <div id="cartItems"></div>
+            <div class="mt-4 text-end">
+              <h5>Загалом: <span id="cartTotal">0</span> ₴</h5>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Продовжити покупки</button>
+            <button type="button" class="btn btn-primary" id="checkoutButton">Оформити замовлення</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="settingsModalLabel">Налаштування</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" id="themeToggle">
+              <label class="form-check-label" for="themeToggle">Темна тема</label>
+            </div>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" id="largeTextToggle">
+              <label class="form-check-label" for="largeTextToggle">Великий шрифт</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Зберегти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-0">© 2026 GadgetStorm — техніка та ігрові подарунки.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
