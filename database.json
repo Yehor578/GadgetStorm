@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Безпровідна колонка",
+      "price": 2990,
+      "description": "Чисте звучання для музики, ігор і розмов.",
+      "category": "gadget",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ2Md8ToAMGiHcSylue-VGUbaNZn4_SLi4K2c9R1u3S3c9mUYFoZCwG4lMTojALJ13qBgtcG3PI_hSGodz_YN1K25o1ittBiKzghfJwF_CDn3yb7S6axN67l4FPD-kVEoZnlghbZg&usqp=CAc"
+    },
+    {
+      "id": 2,
+      "name": "Навушники з шумопоглинанням",
+      "price": 3999,
+      "description": "Контроль музики та звуком прямо на голові.",
+      "category": "gadget",
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSdVmB8g9EZ8bDczKHLfyAfJ_lJTXBWPqZjLcBD1cpcG09Y8IqJOI8UOEf1RshT_Gyob0h3AxQHXOs53YpO4jfict26v95YRjh2wrqYclCGpEYYLtdywzxWAFK_QZW8Nl8CLqM0fg&usqp=CAc"
+    },
+    {
+      "id": 3,
+      "name": "Ігрова миша",
+      "price": 1799,
+      "description": "Висока точність та швидкість для геймерів.",
+      "category": "gadget",
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcST46eh0yQ6vSQ4R9g13OZAngFHqd4TkfU1vz4sLKMMOnJMvpCqQl8oUsZbMBZcNeYwWE2-1L3-cuVqJKBhvZmfBUQH3GZfhZxA5t43Z2mbbMkaDv3Pu4ng&usqp=CAc"
+    },
+    {
+      "id": 4,
+      "name": "Ігрова клавіатура",
+      "price": 6844,
+      "description": "Механічні клавіші з підсвічуванням для ігор.",
+      "category": "gadget",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQnS8EXDpKI1ecYOgixCRm6UXy86Z7lO0wvMh89hLc0qJoUdHXD6UJyMXziwZYdleCIyWtVRheU_AR1Bhu6GgtGwabNErpa8KO6uGRJadprXFCRooPQ3z1Lng&usqp=CAc"
+    },
+    {
+      "id": 5,
+      "name": "Смарт-годинник",
+      "price": 2349,
+      "description": "Контроль здоров’я та сповіщення прямо на зап’ясті.",
+      "category": "gadget",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI-FGBHVodKHBji3iBItPpwoA-0XbpO2ctRA&s"
+    },
+    {
+      "id": 6,
+      "name": "Фітнес-браслет",
+      "price": 739,
+      "description": "Моніторинг фізичної активності та здоров’я.",
+      "category": "gadget",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSktbzAc8DRH8_fKJSvmZUYtQc1DvQ9-eaZOg&s"
+    },
+    {
+      "id": 7,
+      "name": " Портативний зарядний пристрій",
+      "price": 1689,
+      "description": "Заряджайте свої пристрої будь-де.",
+      "category": "gadget",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRvhaPaThh1uW3WUIiptVeH41ETTJu06xCnA&s"
+    },
+    {
+      "id": 8,
+      "name": "Смартфон",
+      "price": 13256,
+      "description": "Сучасний смартфон з високими характеристиками.",
+      "category": "gadget",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJjgwZje1RGPmGXtDe_tfDwsVuI6VpWMKkLw&s"
+    }
+  ],
+  "giftCards": [
+    {
+      "id": 101,
+      "name": "Steam Gift Card 500₴",
+      "price": 500,
+      "description": "Для покупок ігор та DLC у Steam."
+    },
+    {
+      "id": 102,
+      "name": "PlayStation Store 800₴",
+      "price": 800,
+      "description": "Подарунок для власників PlayStation."
+    },
+    {
+      "id": 103,
+      "name": "Xbox Gift Card 1000₴",
+      "price": 1000,
+      "description": "Підходить для Xbox та Microsoft Store."
+    },
+    {
+      "id": 104,
+      "name": "Nintendo eShop 700₴",
+      "price": 700,
+      "description": "Ідеальний подарунок для фанатів Nintendo."
+    }
+  ]
+}
