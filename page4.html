@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GadgetStorm — Четверта сторінка</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">GadgetStorm</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html#products">Товари</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#giftcards">Подарункові карти</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#features">Переваги</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-white d-flex align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 fw-bold">Обмін гаджетів</h1>
+        <p class="lead fs-3 mb-4">Здавайте старий пристрій і отримуйте новий зі знижкою або обмінюйте на модель вищого класу.</p>
+        <a href="index.html" class="btn btn-outline-light btn-lg me-2">1</a>
+        <a href="page2.html" class="btn btn-outline-light btn-lg me-2">2</a>
+        <a href="page3.html" class="btn btn-outline-light btn-lg me-2">3</a>
+        <a href="page4.html" class="btn btn-primary btn-lg me-2">4</a>
+        <a href="page5.html" class="btn btn-outline-light btn-lg">5</a>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <section class="py-5 bg-light rounded-4 shadow-sm text-center">
+        <div class="container py-4">
+          <h2 class="mb-4">Обмін гаджетів</h2>
+          <p class="text-muted">Пропонуємо обмін смартфонів, планшетів та аксесуарів за вигідними умовами з мінімальним кроком доплати.</p>
+          <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#exchangeForm" aria-expanded="false" aria-controls="exchangeForm">
+            Обмін гаджета
+          </button>
+
+          <div class="collapse mt-4" id="exchangeForm">
+            <div class="card card-body mx-auto" style="max-width: 600px;">
+              <form>
+                <div class="mb-3 text-start">
+                  <label for="desiredModel" class="form-label">Модель телефону, який хотіли б отримати</label>
+                  <input type="text" class="form-control" id="desiredModel" placeholder="Наприклад, iPhone 15 або Samsung Galaxy S25">
+                </div>
+                <div class="mb-3 text-start">
+                  <label for="currentModel" class="form-label">Ваша модель телефону</label>
+                  <input type="text" class="form-control" id="currentModel" placeholder="Наприклад, Xiaomi Redmi Note 12">
+                </div>
+                <button type="submit" class="btn btn-success w-100">Надіслати заявку на обмін</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-0">© 2026 GadgetStorm — техніка та ігрові подарунки.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

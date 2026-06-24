@@ -4,6 +4,10 @@
   --hero-image: linear-gradient(135deg, rgba(13, 110, 253, 0.85), rgba(33, 37, 41, 0.85)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg-soft);

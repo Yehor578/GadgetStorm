@@ -24,7 +24,7 @@
             <button class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#settingsModal">
               Налаштування
             </button>
-            <button class="btn btn-outline-light position-relative" id="cartButton" type="button" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <button class="btn btn-outline-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-controls="cartCanvas">
               Кошик
               <span class="badge bg-danger rounded-pill" id="cartCount">0</span>
             </button>
@@ -38,7 +38,12 @@
         <h1 class="display-1 fw-bold">GadgetStorm</h1>
         <p class="lead fs-3 mb-4">Великий магазин техніки та ігрових подарунків з крутим кошиком.</p>
         <a href="#products" class="btn btn-light btn-lg me-2">Переглянути товари</a>
-        <a href="#giftcards" class="btn btn-outline-light btn-lg">Подарункові карти</a>
+        <a href="#giftcards" class="btn btn-outline-light btn-lg me-2">Подарункові карти</a>
+        <a href="index.html" class="btn btn-primary btn-lg me-2">1</a>
+        <a href="page2.html" class="btn btn-outline-light btn-lg me-2">2</a>
+        <a href="page3.html" class="btn btn-outline-light btn-lg me-2">3</a>
+        <a href="page4.html" class="btn btn-outline-light btn-lg me-2">4</a>
+        <a href="page5.html" class="btn btn-outline-light btn-lg">5</a>
       </div>
     </header>
 
@@ -57,7 +62,7 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
           <div>
             <h2>Подарункові карти</h2>
-            <p class="text-muted">Купуйте карти для Steam, PlayStation і Xbox — чудовий подарунок для геймерів.</p>
+            <p class="text-dark">Купуйте карти для Steam, PlayStation і Xbox — чудовий подарунок для геймерів.</p>
           </div>
         </div>
         <div class="row" id="giftCardGrid"></div>
@@ -65,7 +70,7 @@
 
       <section id="features" class="py-5 bg-light rounded-4 shadow-sm">
         <div class="container py-4">
-          <h2 class="mb-4 text-center">Чому обирають GadgetStorm</h2>
+          <h2 class="mb-4 text-center text-dark">Чому обирають GadgetStorm</h2>
           <div class="row g-4">
             <div class="col-md-4">
               <div class="card feature-card h-100 border-0 shadow-sm p-4 text-center">
@@ -93,23 +98,20 @@
       </section>
     </main>
 
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="cartModalLabel">Ваш кошик</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas" aria-labelledby="cartCanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="cartCanvasLabel">Кошик покупок</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Закрити"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <div id="cartItems" class="mb-4"></div>
+        <div class="mt-auto">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-semibold">Загалом:</span>
+            <span id="cartTotal" class="fs-5">0 ₴</span>
           </div>
-          <div class="modal-body">
-            <div id="cartItems"></div>
-            <div class="mt-4 text-end">
-              <h5>Загалом: <span id="cartTotal">0</span> ₴</h5>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Продовжити покупки</button>
-            <button type="button" class="btn btn-primary" id="checkoutButton">Оформити замовлення</button>
-          </div>
+          <p class="small text-muted mb-3">Менеджер магазину: <strong>+380961374722</strong></p>
+          <button id="checkoutButton" type="button" class="btn btn-primary w-100">Оформити замовлення</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GadgetStorm — Друга сторінка</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">GadgetStorm</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html#products">Товари</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#giftcards">Подарункові карти</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#features">Переваги</a></li>
+          </ul>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas" aria-controls="cartCanvas">
+              Кошик
+              <span class="badge bg-danger rounded-pill" id="cartCount">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-white d-flex align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 fw-bold">GadgetStorm</h1>
+        <p class="lead fs-3 mb-4">Це друга сторінка сайту GadgetStorm.</p>
+        <a href="index.html" class="btn btn-outline-light btn-lg me-2">1</a>
+        <a href="page2.html" class="btn btn-primary btn-lg me-2">2</a>
+        <a href="page3.html" class="btn btn-outline-light btn-lg me-2">3</a>
+        <a href="page4.html" class="btn btn-outline-light btn-lg me-2">4</a>
+        <a href="page5.html" class="btn btn-outline-light btn-lg">5</a>
+      </div>
+    </header>
+
+    <main class="container my-5">
+      <div class="mb-4">
+        <h4 class="mb-1">Акційні товари GadgetStorm</h4>
+        <p class="text-muted mb-0">Додайте товар до кошика та оформіть покупку прямо на цій сторінці.</p>
+      </div>
+
+      <section class="py-5 bg-light rounded-4 shadow-sm text-center">
+        <div class="container py-4">
+          <h2 class="mb-4">GadgetStorm</h2>
+          <p class="text-muted">Тут може бути інформація про акції, новинки або спеціальні пропозиції.</p>
+          <a href="index.html" class="btn btn-primary mt-3">Повернутись на головну</a>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <div class="text-center mb-4">
+          <h2>Спеціальна акція на прилади</h2>
+          <p class="text-muted">Обирай вигідні пропозиції на популярні гаджети — знижки до 20% лише цього тижня.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Ігрова миша</h5>
+                <p class="card-text text-muted">Точна миша з RGB-підсвічуванням.</p>
+                <p class="h4 text-primary">1499 ₴ <span class="text-decoration-line-through text-muted fs-6">1799 ₴</span></p>
+                <span class="badge bg-success">-17%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(3)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Смарт-годинник</h5>
+                <p class="card-text text-muted">Стильний годинник для щоденного контролю здоров’я.</p>
+                <p class="h4 text-primary">1899 ₴ <span class="text-decoration-line-through text-muted fs-6">2349 ₴</span></p>
+                <span class="badge bg-success">-19%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(5)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Фітнес-браслет</h5>
+                <p class="card-text text-muted">Легкий трекер для активного життя.</p>
+                <p class="h4 text-primary">599 ₴ <span class="text-decoration-line-through text-muted fs-6">739 ₴</span></p>
+                <span class="badge bg-success">-19%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(6)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Безпровідні навушники</h5>
+                <p class="card-text text-muted">Комфортний звук без проводів для музики і ігор.</p>
+                <p class="h4 text-primary">2999 ₴ <span class="text-decoration-line-through text-muted fs-6">3999 ₴</span></p>
+                <span class="badge bg-success">-25%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(2)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Портативний зарядний пристрій</h5>
+                <p class="card-text text-muted">Швидка підзарядка будь-де.</p>
+                <p class="h4 text-primary">1399 ₴ <span class="text-decoration-line-through text-muted fs-6">1689 ₴</span></p>
+                <span class="badge bg-success">-17%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(7)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Смартфон</h5>
+                <p class="card-text text-muted">Потужний смартфон для роботи та розваг.</p>
+                <p class="h4 text-primary">10999 ₴ <span class="text-decoration-line-through text-muted fs-6">13256 ₴</span></p>
+                <span class="badge bg-success">-17%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(8)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Ігрова клавіатура</h5>
+                <p class="card-text text-muted">Механічна клавіатура з підсвічуванням.</p>
+                <p class="h4 text-primary">5499 ₴ <span class="text-decoration-line-through text-muted fs-6">6844 ₴</span></p>
+                <span class="badge bg-success">-20%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(4)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Гаджет-подарунок</h5>
+                <p class="card-text text-muted">Набір аксесуарів для роботи та розваг.</p>
+                <p class="h4 text-primary">999 ₴ <span class="text-decoration-line-through text-muted fs-6">1299 ₴</span></p>
+                <span class="badge bg-success">-23%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(9)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center">
+                <h5 class="card-title">Bluetooth-колонка</h5>
+                <p class="card-text text-muted">Яскравий звук для вечірок чи відпочинку.</p>
+                <p class="h4 text-primary">2499 ₴ <span class="text-decoration-line-through text-muted fs-6">2990 ₴</span></p>
+                <span class="badge bg-success">-17%</span>
+                <button class="btn btn-success w-100 mt-3" type="button" onclick="addToCart(10)">Купити по акції</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas" aria-labelledby="cartCanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="cartCanvasLabel">Кошик покупок</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Закрити"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+          <div id="cartItems" class="mb-4"></div>
+          <div class="mt-auto">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="fw-semibold">Загалом:</span>
+              <span id="cartTotal" class="fs-5">0 ₴</span>
+            </div>
+            <p class="small text-muted mb-3">Менеджер магазину: <strong>+380961374722</strong></p>
+            <button id="checkoutButton" type="button" class="btn btn-success w-100">Оформити замовлення</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-0">© 2026 GadgetStorm — техніка та ігрові подарунки.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

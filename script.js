@@ -63,6 +63,22 @@ const products = [
     category: 'gadget',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJjgwZje1RGPmGXtDe_tfDwsVuI6VpWMKkLw&s',
   },
+  {
+    id: 9,
+    name: 'Гаджет-подарунок',
+    price: 999,
+    description: 'Набір аксесуарів для роботи та розваг.',
+    category: 'gadget',
+    image: '',
+  },
+  {
+    id: 10,
+    name: 'Bluetooth-колонка',
+    price: 2499,
+    description: 'Яскравий звук для вечірок чи відпочинку.',
+    category: 'gadget',
+    image: '',
+  },
 ];
 
 const giftCards = [
@@ -159,12 +175,22 @@ function changeQuantity(itemId, delta) {
 }
 
 function updateCart() {
-  cartCount.textContent = cart.reduce((sum, entry) => sum + entry.quantity, 0);
-  cartTotal.textContent = formatPrice(cart.reduce((sum, entry) => sum + entry.quantity * entry.price, 0));
-  renderCartItems();
+  if (cartCount) {
+    cartCount.textContent = cart.reduce((sum, entry) => sum + entry.quantity, 0);
+  }
+
+  if (cartTotal) {
+    cartTotal.textContent = formatPrice(cart.reduce((sum, entry) => sum + entry.quantity * entry.price, 0));
+  }
+
+  if (cartItems) {
+    renderCartItems();
+  }
 }
 
 function renderCartItems() {
+  if (!cartItems) return;
+
   if (cart.length === 0) {
     cartItems.innerHTML = '<p class="cart-empty">Кошик порожній. Додайте товари, щоб оформити замовлення.</p>';
     return;
@@ -196,20 +222,30 @@ function renderCartItems() {
     .join('');
 }
 
-checkoutButton.addEventListener('click', () => {
-  if (cart.length === 0) {
-    alert('Ваш кошик порожній. Додайте товари перед оформленням.');
-    return;
-  }
-  cart.length = 0;
-  updateCart();
-  alert('Дякуємо за замовлення! Ваші покупки успішно оформлені.');
-  const cartModal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
-  if (cartModal) cartModal.hide();
-});
+if (checkoutButton) {
+  checkoutButton.addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert('Ваш кошик порожній. Додайте товари перед оформленням.');
+      return;
+    }
+    cart.length = 0;
+    updateCart();
+    alert('Дякуємо за замовлення! Ваші покупки успішно оформлені.');
+    const cartCanvas = document.getElementById('cartCanvas');
+    if (cartCanvas) {
+      const offcanvas = bootstrap.Offcanvas.getInstance(cartCanvas);
+      if (offcanvas) offcanvas.hide();
+    }
+    const cartModal = document.getElementById('cartModal');
+    if (cartModal) {
+      const modal = bootstrap.Modal.getInstance(cartModal);
+      if (modal) modal.hide();
+    }
+  });
+}
 
-renderCards(products, productGrid);
-renderCards(giftCards, giftCardGrid);
+if (productGrid) renderCards(products, productGrid);
+if (giftCardGrid) renderCards(giftCards, giftCardGrid);
 updateCart();
 
 if (themeToggle && largeTextToggle) {
