@@ -37,6 +37,15 @@ body {
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14);
 }
 
+.page2-offers .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.page2-offers .card-body .btn {
+  margin-top: auto;
+}
+
 .product-image {
   height: 220px;
   object-fit: cover;
